@@ -26,7 +26,7 @@
  *
  * 1 <= s.length <= 104
  * s consists of parentheses only '()[]{}'.
- *  @see <a href="https://leetcode.com/problems/valid-parentheses/">LeetCode</a>
+ * @see <a href="https://leetcode.com/problems/valid-parentheses/">LeetCode</a>
  */
 fun isValid(s: String): Boolean {
     val deque = ArrayDeque<Char>()
