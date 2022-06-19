@@ -24,7 +24,7 @@
  *
  * Constraints:
  *
- * 1 <= s.length <= 104
+ * 1 <= s.length <= 10^4
  * s consists of parentheses only '()[]{}'.
  * @see <a href="https://leetcode.com/problems/valid-parentheses/">LeetCode</a>
  */
