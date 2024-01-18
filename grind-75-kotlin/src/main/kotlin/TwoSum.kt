@@ -45,12 +45,13 @@ fun twoSum(nums: IntArray, target: Int): IntArray {
     }
 
     for (index in nums.indices) {
+        val targetComplementIndex = map.get(target - nums[index])
         /*
          * Since we're not allowed to use the same element twice, we need to ensure that the index of the current
          * element is not the same as the index of the element we're looking for
          */
-        if (map.containsKey(target - nums[index]) && map[target - nums[index]] != index) {
-            return intArrayOf(index, map[target - nums[index]]!!)
+        if (targetComplementIndex != null && targetComplementIndex != index) {
+            return intArrayOf(index, targetComplementIndex)
         }
     }
     return intArrayOf()
