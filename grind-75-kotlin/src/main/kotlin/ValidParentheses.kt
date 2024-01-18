@@ -29,18 +29,18 @@
  * @see <a href="https://leetcode.com/problems/valid-parentheses/">LeetCode</a>
  */
 fun isValid(s: String): Boolean {
+    if (s.length % 2 == 1) return false
+
     val deque = ArrayDeque<Char>()
     for (parenthesis in s) {
         when (parenthesis) {
-            in openingParenthesesList -> parenthesesMap[parenthesis]?.let { deque.addLast(it) }
-            in closingParenthesesList -> if (deque.isEmpty() || deque.removeLast() != parenthesis) return false
+            in openingParenthesesSet -> parenthesesMap[parenthesis]?.let { deque.addLast(it) }
+            in closingParenthesesSet -> if (deque.lastOrNull() == parenthesis) deque.removeLast() else return false
         }
     }
     return deque.isEmpty()
 }
 
-val parenthesesMap = mapOf(
-    '(' to ')', '{' to '}', '[' to ']'
-)
-val openingParenthesesList = listOf('(', '{', '[')
-val closingParenthesesList = listOf(')', '}', ']')
+val parenthesesMap = mapOf('(' to ')', '{' to '}', '[' to ']')
+val openingParenthesesSet = setOf('(', '{', '[')
+val closingParenthesesSet = setOf(')', '}', ']')
