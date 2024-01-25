@@ -24,6 +24,7 @@
  *
  * 1 <= prices.length <= 10^5
  * 0 <= prices[i] <= 10^4
+ * @see <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">LeetCode</a>
  */
 fun maxProfit(prices: IntArray): Int {
     if (prices.size == 1) {
