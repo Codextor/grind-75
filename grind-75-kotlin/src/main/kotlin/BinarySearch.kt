@@ -34,11 +34,11 @@ class Solution {
         if (start > end) {
             return -1
         }
-        val midIndex: Int = start + ((end - start) / 2)
+        val mid: Int = start + ((end - start) / 2)
         return when {
-            nums[midIndex] == target -> midIndex
-            nums[midIndex] > target -> binarySearch(nums, target, start, midIndex - 1)
-            else -> binarySearch(nums, target, midIndex + 1, end)
+            nums[mid] == target -> mid
+            nums[mid] > target -> binarySearch(nums, target, start, mid - 1)
+            else -> binarySearch(nums, target, mid + 1, end)
         }
     }
 }
