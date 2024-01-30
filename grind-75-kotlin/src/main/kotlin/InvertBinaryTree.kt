@@ -34,13 +34,15 @@
  *     var right: TreeNode? = null
  * }
  */
-fun invertTree(root: TreeNode?): TreeNode? {
-    root?.let { root ->
-        val tempNode = root.left
-        root.left = root.right?.also { invertTree(it) }
-        root.right = tempNode?.also { invertTree(it) }
+class Solution {
+    fun invertTree(root: TreeNode?): TreeNode? {
+        root?.let { root ->
+            val tempNode = root.left
+            root.left = root.right?.also { invertTree(it) }
+            root.right = tempNode?.also { invertTree(it) }
+        }
+        return root
     }
-    return root
 }
 
 class TreeNode(var `val`: Int) {
