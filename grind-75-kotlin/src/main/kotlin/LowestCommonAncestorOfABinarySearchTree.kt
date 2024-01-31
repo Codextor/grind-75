@@ -1,3 +1,5 @@
+import commonclasses.TreeNode
+
 /**
  * Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
  *
@@ -38,17 +40,10 @@
  *     var right: TreeNode? = null
  * }
  */
-class Solution {
-    fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {
-        return when {
-            root!!.`val` > p!!.`val` && root.`val` > q!!.`val` -> lowestCommonAncestor(root.left, p, q)
-            root.`val` < p.`val` && root.`val` < q!!.`val` -> lowestCommonAncestor(root.right, p, q)
-            else -> root
-        }
+fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {
+    return when {
+        root!!.`val` > p!!.`val` && root.`val` > q!!.`val` -> lowestCommonAncestor(root.left, p, q)
+        root.`val` < p.`val` && root.`val` < q!!.`val` -> lowestCommonAncestor(root.right, p, q)
+        else -> root
     }
-}
-
-class TreeNode(var `val`: Int = 0) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
 }

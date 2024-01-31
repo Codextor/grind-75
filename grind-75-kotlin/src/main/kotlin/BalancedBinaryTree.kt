@@ -1,3 +1,4 @@
+import commonclasses.TreeNode
 import kotlin.math.abs
 
 /**
@@ -53,9 +54,4 @@ private fun heightOfNode(node: TreeNode?): Int {
     } else {
         1 + maxOf(heightOfLeftSubtree, heightOfRightSubtree)
     }
-}
-
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
 }

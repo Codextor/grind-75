@@ -1,3 +1,5 @@
+import commonclasses.TreeNode
+
 /**
  * Given the root of a binary tree, invert the tree, and return its root.
  *
@@ -34,18 +36,11 @@
  *     var right: TreeNode? = null
  * }
  */
-class Solution {
-    fun invertTree(root: TreeNode?): TreeNode? {
-        root?.let { root ->
-            val tempNode = root.left
-            root.left = root.right?.also { invertTree(it) }
-            root.right = tempNode?.also { invertTree(it) }
-        }
-        return root
+fun invertTree(root: TreeNode?): TreeNode? {
+    root?.let { root ->
+        val tempNode = root.left
+        root.left = root.right?.also { invertTree(it) }
+        root.right = tempNode?.also { invertTree(it) }
     }
-}
-
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
+    return root
 }

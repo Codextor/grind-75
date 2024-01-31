@@ -1,3 +1,5 @@
+import commonclasses.ListNode
+
 /**
  * You are given the heads of two sorted linked lists list1 and list2.
  *
@@ -48,8 +50,4 @@ fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
         list2.next = mergeTwoLists(list1, list2.next)
         list2
     }
-}
-
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
 }
