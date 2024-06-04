@@ -25,23 +25,20 @@
  * @see <a href="https://leetcode.com/problems/longest-palindrome/">LeetCode</a>
  */
 fun longestPalindrome(s: String): Int {
-    val memoryMap = mutableMapOf<Char, Int>()
-    s.forEach { character ->
-        memoryMap.put(character, 1 + memoryMap.getOrDefault(character, 0))
-    }
-    var longestPalindromeLength = 0
-    var middleElementEncountered = false
-    memoryMap.values.forEach { frequency ->
-        if (frequency.rem(2) == 0) {
-            longestPalindromeLength += frequency
+    var palindromeLength = 0
+    val unmatchedChars = mutableSetOf<Char>()
+    s.forEach { currentChar ->
+        if (currentChar in unmatchedChars) {
+            palindromeLength += 2
+            unmatchedChars.remove(currentChar)
         } else {
-            if (middleElementEncountered == false) {
-                longestPalindromeLength += frequency
-                middleElementEncountered = true
-            } else {
-                longestPalindromeLength += frequency - 1
-            }
+            unmatchedChars.add(currentChar)
         }
     }
-    return longestPalindromeLength
+
+    if (unmatchedChars.isNotEmpty()) {
+        palindromeLength++
+    }
+
+    return palindromeLength
 }
