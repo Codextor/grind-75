@@ -38,7 +38,7 @@ fun isPalindrome(s: String): Boolean {
     }
     var startIndex = 0
     var endIndex = cleanedString.length - 1
-    while (startIndex <= endIndex) {
+    while (startIndex < endIndex) {
         if (cleanedString[startIndex] == cleanedString[endIndex]) {
             startIndex++
             endIndex--
