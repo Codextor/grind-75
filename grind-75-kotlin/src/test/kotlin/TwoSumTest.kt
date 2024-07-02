@@ -14,7 +14,7 @@ class TwoSumTest {
         testCases.forEach { testCase ->
             val (input, expected) = testCase
             val (nums, target) = input
-            assertContentEquals(expected, twoSum(nums, target))
+            assertContentEquals(expected.sortedArray(), twoSum(nums, target).sortedArray())
         }
     }
 }
