@@ -10,8 +10,8 @@ class BinarySearchTest {
             Pair(Pair(intArrayOf(-1, 0, 3, 5, 9, 12), 2), -1)
         )
 
-        testCases.forEach { test ->
-            val (input, expected) = test
+        testCases.forEach { testCase ->
+            val (input, expected) = testCase
             val (nums, target) = input
             assertEquals(expected, search(nums, target))
         }
