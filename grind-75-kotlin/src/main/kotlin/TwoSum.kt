@@ -35,24 +35,18 @@
  * @see <a href="https://leetcode.com/problems/two-sum/">LeetCode</a>
  */
 fun twoSum(nums: IntArray, target: Int): IntArray {
-    val map = HashMap<Int, Int>()
+    val numToIndexMap = HashMap<Int, Int>()
+
     /*
      * Based on the assumption that each input would have exactly one solution, we can safely override the values of
      * repeated keys, knowing they won't be part of the solution
      */
-    for (index in nums.indices) {
-        map[nums[index]] = index
-    }
-
-    for (index in nums.indices) {
-        val targetComplementIndex = map.get(target - nums[index])
-        /*
-         * Since we're not allowed to use the same element twice, we need to ensure that the index of the current
-         * element is not the same as the index of the element we're looking for
-         */
-        if (targetComplementIndex != null && targetComplementIndex != index) {
-            return intArrayOf(index, targetComplementIndex)
+    nums.forEachIndexed { index, num ->
+        val targetComplementIndex = numToIndexMap[target - num]
+        targetComplementIndex?.let {
+            return intArrayOf(it, index)
         }
+        numToIndexMap[num] = index
     }
     return intArrayOf()
 }
