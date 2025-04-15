@@ -33,7 +33,7 @@
  * 0 <= nums[i] <= 1000
  * @see <a href="https://leetcode.com/problems/house-robber-ii/">LeetCode</a>
  */
-fun rob(nums: IntArray): Int {
+fun rob2(nums: IntArray): Int {
     if (nums.size == 1) {
         return nums[0]
     }

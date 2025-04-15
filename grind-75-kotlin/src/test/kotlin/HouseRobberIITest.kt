@@ -4,7 +4,7 @@ import kotlin.test.assertEquals
 class HouseRobberIITest {
 
     @Test
-    fun testRob() {
+    fun testRob2() {
         val testCases = listOf(
             Pair(intArrayOf(2, 3, 2), 3),
             Pair(intArrayOf(1, 2, 3, 1), 4),
@@ -13,7 +13,7 @@ class HouseRobberIITest {
 
         testCases.forEach { testCase ->
             val (input, expected) = testCase
-            assertEquals(expected, rob(input))
+            assertEquals(expected, rob2(input))
         }
     }
 }
