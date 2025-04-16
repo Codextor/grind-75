@@ -36,11 +36,13 @@ fun climbStairs(n: Int): Int {
 }
 
 private fun waysToClimbStairs(n: Int): Int {
-    val array = IntArray(n)
-    array[0] = 1
-    array[1] = 2
-    for (index in 2..n - 1) {
-        array[index] = array[index - 1] + array[index - 2]
+    var twoStepsBefore = 0
+    var oneStepBefore = 1
+
+    repeat(n) {
+        val current = twoStepsBefore + oneStepBefore
+        twoStepsBefore = oneStepBefore
+        oneStepBefore = current
     }
-    return array[n - 1]
+    return oneStepBefore
 }
