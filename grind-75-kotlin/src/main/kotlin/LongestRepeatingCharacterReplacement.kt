@@ -21,7 +21,7 @@
  *
  * Constraints:
  *
- * 1 <= s.length <= 105
+ * 1 <= s.length <= 10^5
  * s consists of only uppercase English letters.
  * 0 <= k <= s.length
  * @see <a href="https://leetcode.com/problems/longest-repeating-character-replacement/">LeetCode</a>
