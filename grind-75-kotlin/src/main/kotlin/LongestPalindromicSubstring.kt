@@ -23,7 +23,7 @@
  * 1 <= s.length <= 1000
  * s consist of only digits and English letters.
  *
- * @see <a href="https://leetcode.com/problems/longest-palindrome/">LeetCode</a>
+ * @see <a href="https://leetcode.com/problems/longest-palindromic-substring/">LeetCode</a>
  */
 fun longestPalindromicSubstring(s: String): String {
     if (s.length == 1) {
